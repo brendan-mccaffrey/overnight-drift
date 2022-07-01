@@ -12,7 +12,7 @@ Essentially, the paper analyzed the concept of *Overnight Drift*, how a majority
 
 ### Stocks
 
-
+Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
 ![](/assets/stocks/snp.png)  |  ![](/assets/stocks/nasdaq.png)
 ![](/assets/stocks/dow.png)  |  ![](/assets/stocks/gold.png)
@@ -22,6 +22,7 @@ Essentially, the paper analyzed the concept of *Overnight Drift*, how a majority
 
 ### Crypto
 
+             |  
 :-------------------------:|:-------------------------:
 ![](/assets/crypto/btc.png)  |  ![](/assets/crypto/eth.png)
 ![](/assets/crypto/sol.png)  |  ![](/assets/crypto/matic.png)
