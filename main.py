@@ -42,7 +42,7 @@ def test_fees_trad(assets, fee):
         data = load("data/assets/" + asset["name"] + ".pickle")
         df = backtest_fee(data, fee)
         chart(df, asset["name"] + " Strategy with " + str(fee * 100.0) + "% Fee")
-        save(df, "fee-tests/assets/" + asset["name"] + ".pickle")
+        save(df, "fee-tests/assets-new/" + asset["name"] + ".pickle")
 
 
 def run_yahoo_data():
@@ -50,5 +50,5 @@ def run_yahoo_data():
 
 
 # run_yahoo_data()
-# test_fees_trad(assets, 0.0001)
-test_fees_crypto(coins, 0.0001)
+test_fees_trad(assets, 0.000013)
+# test_fees_crypto(coins, 0.0001)

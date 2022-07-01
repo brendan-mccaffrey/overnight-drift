@@ -89,7 +89,7 @@ def ftx_data(coin):
         start_time = time.mktime(start.timetuple())
         end_time = time.mktime(end.timetuple())
 
-    save(full_data, coin + "_data.pickle")
+    # save(full_data, coin + "_data.pickle")
 
     return full_data
 

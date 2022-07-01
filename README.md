@@ -10,6 +10,8 @@ Essentially, the paper analyzed the concept of *Overnight Drift*, how a majority
 
 ## Results
 
+Including tx costs greatly harms performance.
+
 ### Stocks
 
 ![](/assets/stocks/snp.png)  |  ![](/assets/stocks/nasdaq.png)
@@ -24,3 +26,12 @@ Essentially, the paper analyzed the concept of *Overnight Drift*, how a majority
 :-------------------------:|:-------------------------:
 ![](/assets/crypto/sol.png)  |  ![](/assets/crypto/matic.png)
 ![](/assets/crypto/mkr.png)  
+
+## Remaining Questions
+
+I should better model costs to follow a half-cent fee (interactive brokers) per share - percentage of which is dependent on share price.
+
+What if you were to deploy capital intraday and effectively earn the 0.001% fee? Hmmm
+
+I should probably check specific intervals so that for nasdaq, djia and s&p the results arent so blurred by 30 years of money printing / only up environment.
+
