@@ -23,4 +23,4 @@ Essentially, the paper analyzed the concept of *Overnight Drift*, how a majority
 ![](/assets/crypto/btc.png)  |  ![](/assets/crypto/eth.png)
 :-------------------------:|:-------------------------:
 ![](/assets/crypto/sol.png)  |  ![](/assets/crypto/matic.png)
-![](/assets/crypto/maker.png)  
+![](/assets/crypto/mkr.png)  
