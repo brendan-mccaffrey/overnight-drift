@@ -36,7 +36,11 @@ This will be my last commit to this public repo - further work will remain priva
 ![](/charts/mp.png)  |  ![](/charts/pll.png)
 ![](/charts/copper.png)  |  ![](/charts/steel.png)
 
+## Explanation
 
+There are many explanations for why overnight drift exists (see paper linked at top), but I'm not satisfied with them. Especially because the effect exists in crypto markets...
+
+I have some theories, but open to thoughts. If you want to offer an explanation feel free to contact me *brendan*`at`*undefined*`dot`*xyz*
 
 
 
