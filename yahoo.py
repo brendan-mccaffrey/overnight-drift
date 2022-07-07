@@ -1,22 +1,29 @@
+from datetime import datetime
 import yfinance as yf
 import pandas as pd
 from manager import *
 
+# def trim_recent(df):
+#     trim_date = datetime.datetime(2000, 1, 1, 0, 0, 0)
 
-def yahoo_data(assets):
+#     for idx, row in df.iterrows():
 
-    for asset in assets:
 
-        print("downloading " + asset["name"])
-        data = yf.download(asset["ticker"], period="max", interval="1d")
+def yahoo_data(stuff):
 
-        df = pd.DataFrame(data)
+    for thing in stuff:
+        sector = thing["class"]
+        picks = thing["list"]
 
-        df = df[["Open", "Close"]]
-        df.rename({"Open": "open", "Close": "close"}, axis=1, inplace=True)
+        for asset in picks:
+            print("downloading " + asset["name"])
+            data = yf.download(asset["ticker"], start="2022-01-01", interval="1d")
 
-        print(type(df.index[1]))
+            df = pd.DataFrame(data)
 
-        print(df.head(5))
+            df = df[["Open", "Close"]]
+            df.rename({"Open": "open", "Close": "close"}, axis=1, inplace=True)
 
-        save(df, "data/assets/" + asset["name"] + ".pickle")
+            save(df, "data/" + sector + "/" + asset["name"] + ".pickle")
+
+            # print("Testing selecting first open: ", df.iloc[0, 1])

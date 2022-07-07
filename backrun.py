@@ -36,9 +36,17 @@ def chart(df, title):
     plt.show()
 
 
-def backtest_fee(df, fee):
-    fee_factor = (1.0 - fee) ** 2
-    print("FEE FACTOR IS " + str(fee_factor))
+def backtest_fee(df, usd_per_share):
+    share_price = df.iloc[0, 1]
+    fee_factor = (1.0 - (usd_per_share / share_price)) ** 2
+    print(
+        "FEE FACTOR IS "
+        + str(fee_factor)
+        + " from "
+        + str(usd_per_share)
+        + " dollar fee of share price "
+        + str(share_price)
+    )
 
     # init strategy columns
     df["hodl"] = [1000.0 for row in range(df.shape[0])]
