@@ -6,32 +6,37 @@ Essentially, the paper analyzed the concept of *Overnight Drift*, how a majority
 
 > The overnight effect refers to the fact that, over at least the past three decades, investors have earned 100% or more of the return on a wide range of risky assets when the markets are closed, and, as sure as day follows night, have earned zero or negative returns for bearing the risk of owning those assets during the daytime, when markets are open. The effect is seen over a wide range of assets, including the broad stock market, individual stocks (particularly those popular with retail investors, and Meme stocks most of all), many ETFs, and cryptocurrencies.
 
+## Files
 
+Forgive me for the poorly organized codebase, but quick overview of the scripts:
+
+- `main.py` | Entrypoint: Define assets, pull data, chart data, supports crypto from FTX and stocks from Yahoo Finance
+- `ftx.py` | Pulls and processes data from FTX. At 15 min interval (needed to get open - no 30 min interval available), FTX caps results around 10 days, so the script makes subsequent queries, combines them, extracts 'open' and 'close' price - 9:30 am and 4 pm Eastern, and compiles to single pandas df.
+- `yahoo.py` | Pulls data from yahoo finance - doesn't require processing to the same extent as FTX data for obvious reasons.
+- `manager.py` | Helper functions including saving and pulling pickle files.
 
 ## Results
 
-Including tx costs greatly harms performance.
+In the long run, tx costs greatly affect the performance of the strategy. There is still potential for a strategy here, but you must face the following questions.
+
+- How can you reduce tx cost?
+- On which assets/asset classes is the strategy most performant (given your current view of market environment)?
+- Can you generate intraday yield on idle capital (particularly, enough to cover tx cost)?
+
+This will be my last commit to this public repo - further work will remain private.
+
+## Charts
 
 ### Stocks
 
-![](/assets/stocks/snp.png)  |  ![](/assets/stocks/nasdaq.png)
+![](/charts/arkk.png)  |  ![](/charts/arkw.png)
 :-------------------------:|:-------------------------:
-![](/assets/stocks/dow.png)  |  ![](/assets/stocks/gold.png)
-![](/assets/stocks/energy.png)  |  ![](/assets/stocks/healthcare.png)
-![](/assets/stocks/water.png)  |  ![](/assets/stocks/energy.png)
+![](/charts/crsp.png)  |  ![](/charts/tsm.png)
+![](/charts/bci.png)  |  ![](/charts/grain.png)
+![](/charts/mp.png)  |  ![](/charts/pll.png)
+![](/charts/copper.png)  |  ![](/charts/steel.png)
 
-### Crypto
 
-![](/assets/crypto/btc.png)  |  ![](/assets/crypto/eth.png)
-:-------------------------:|:-------------------------:
-![](/assets/crypto/sol.png)  |  ![](/assets/crypto/matic.png)
-![](/assets/crypto/mkr.png)  
 
-## Remaining Questions
 
-I should better model costs to follow a half-cent fee (interactive brokers) per share - percentage of which is dependent on share price.
-
-What if you were to deploy capital intraday and effectively earn the 0.001% fee? Hmmm
-
-I should probably check specific intervals so that for nasdaq, djia and s&p the results arent so blurred by 30 years of money printing / only up environment.
 
